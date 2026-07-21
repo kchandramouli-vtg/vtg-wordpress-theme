@@ -204,6 +204,90 @@
   </div>
 </section>
 
+<!-- PROJECTS -->
+<section class="vtg-section vtg-section--warm" id="projects-section">
+  <div class="vtg-container">
+    <div class="vtg-section__label">EU-Funded Projects</div>
+    <div class="vtg-section__title" style="color:var(--vtg-dark);">Research &amp; Innovation <em>In Action</em></div>
+    <div class="vtg-section__intro">Active Horizon Europe and H2020 projects where Venaka TReLeaf leads AI/ML development and technical delivery.</div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:32px;">
+
+      <!-- SILVANUS -->
+      <a href="<?php echo home_url('/projects/silvanus/'); ?>" class="vtg-fade-up" style="background:#fff;border-radius:18px;padding:0;overflow:hidden;border:1px solid rgba(0,0,0,0.06);transition:all 0.3s ease;display:flex;flex-direction:column;text-decoration:none;">
+        <div style="background:linear-gradient(145deg,#0C2E1E,#1A7F52);padding:28px 24px;position:relative;overflow:hidden;">
+          <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:30px 30px;"></div>
+          <div style="position:relative;z-index:2;">
+            <span style="display:inline-block;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border-radius:20px;background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);margin-bottom:12px;">Horizon 2020</span>
+            <div style="font-family:var(--font-display);font-size:24px;color:#fff;font-weight:400;">SILVANUS</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:6px;">GA 101037247</div>
+          </div>
+        </div>
+        <div style="padding:22px 24px;flex:1;display:flex;flex-direction:column;">
+          <div style="font-size:14px;color:var(--vtg-dark);font-weight:600;margin-bottom:8px;">Integrated Wildfire Management Platform</div>
+          <p style="font-size:13px;color:var(--vtg-slate);line-height:1.6;flex:1;margin:0 0 14px;">Climate-resilient forest management — wildfire risk assessment, biodiversity monitoring, and multi-agency coordination across European pilot sites.</p>
+          <div style="font-size:11px;color:var(--vtg-green);font-weight:600;margin-bottom:10px;">VTG Role: Technical Lead — AI/ML Toolkit</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;">
+            <span style="font-size:10px;padding:3px 8px;border-radius:12px;background:var(--vtg-green-faint);color:var(--vtg-green);">NexusAtlas</span>
+            <span style="font-size:10px;padding:3px 8px;border-radius:12px;background:var(--vtg-green-faint);color:var(--vtg-green);">NexusBiome</span>
+            <span style="font-size:10px;padding:3px 8px;border-radius:12px;background:var(--vtg-green-faint);color:var(--vtg-green);">NexusFlow</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- TERRA -->
+      <a href="<?php echo home_url('/projects/terra/'); ?>" class="vtg-fade-up" style="background:#fff;border-radius:18px;padding:0;overflow:hidden;border:1px solid rgba(0,0,0,0.06);transition:all 0.3s ease;display:flex;flex-direction:column;text-decoration:none;">
+        <div style="background:linear-gradient(145deg,#0E3B5C,#1D6FB5);padding:28px 24px;position:relative;overflow:hidden;">
+          <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:30px 30px;"></div>
+          <div style="position:relative;z-index:2;">
+            <span style="display:inline-block;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border-radius:20px;background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);margin-bottom:12px;">Horizon Europe</span>
+            <div style="font-family:var(--font-display);font-size:24px;color:#fff;font-weight:400;">TERRA</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:6px;">GA 101189962</div>
+          </div>
+        </div>
+        <div style="padding:22px 24px;flex:1;display:flex;flex-direction:column;">
+          <div style="font-size:14px;color:var(--vtg-dark);font-weight:600;margin-bottom:8px;">Copernicus Environmental Monitoring</div>
+          <p style="font-size:13px;color:var(--vtg-slate);line-height:1.6;flex:1;margin:0 0 14px;">Coastline detection, erosion forecasting, flood risk assessment, and water pollution analysis using Earth Observation and AI.</p>
+          <div style="font-size:11px;color:var(--vtg-green);font-weight:600;margin-bottom:10px;">VTG Role: WP Lead — AI/ML Toolkit</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;">
+            <span style="font-size:10px;padding:3px 8px;border-radius:12px;background:var(--vtg-green-faint);color:var(--vtg-green);">NexusEarth</span>
+            <span style="font-size:10px;padding:3px 8px;border-radius:12px;background:var(--vtg-green-faint);color:var(--vtg-green);">NexusAtlas</span>
+            <span style="font-size:10px;padding:3px 8px;border-radius:12px;background:var(--vtg-green-faint);color:var(--vtg-green);">NexusScholar</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- X-ALFY -->
+      <a href="<?php echo home_url('/projects/x-alfy/'); ?>" class="vtg-fade-up" style="background:#fff;border-radius:18px;padding:0;overflow:hidden;border:1px solid rgba(0,0,0,0.06);transition:all 0.3s ease;display:flex;flex-direction:column;text-decoration:none;">
+        <div style="background:linear-gradient(145deg,#3D2E0F,#8B6914);padding:28px 24px;position:relative;overflow:hidden;">
+          <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:30px 30px;"></div>
+          <div style="position:relative;z-index:2;">
+            <span style="display:inline-block;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border-radius:20px;background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);margin-bottom:12px;">Horizon Europe</span>
+            <div style="font-family:var(--font-display);font-size:24px;color:#fff;font-weight:400;">X-ALFY</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:6px;">Forestry 5.0</div>
+          </div>
+        </div>
+        <div style="padding:22px 24px;flex:1;display:flex;flex-direction:column;">
+          <div style="font-size:14px;color:var(--vtg-dark);font-weight:600;margin-bottom:8px;">AI-Based XR Tools for Forestry</div>
+          <p style="font-size:13px;color:var(--vtg-slate);line-height:1.6;flex:1;margin:0 0 14px;">Extended reality and AI-driven analytics for sustainable forest management, professional training, and operational decision-making.</p>
+          <div style="font-size:11px;color:var(--vtg-green);font-weight:600;margin-bottom:10px;">VTG Role: AI/ML &amp; Geospatial Analytics</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px;">
+            <span style="font-size:10px;padding:3px 8px;border-radius:12px;background:var(--vtg-green-faint);color:var(--vtg-green);">NexusAtlas</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Past projects link + View all -->
+    <div style="display:flex;justify-content:center;gap:16px;margin-top:12px;">
+      <a href="<?php echo home_url('/projects/'); ?>" class="vtg-btn vtg-btn--primary">All Projects &rarr;</a>
+      <a href="<?php echo home_url('/projects/past-projects/'); ?>" class="vtg-btn vtg-btn--outline" style="color:var(--vtg-dark);border-color:rgba(0,0,0,0.1);">Past Projects</a>
+    </div>
+
+  </div>
+</section>
+
 <!-- R&D -->
 <section class="vtg-section vtg-section--warm" id="research">
   <div class="vtg-container">

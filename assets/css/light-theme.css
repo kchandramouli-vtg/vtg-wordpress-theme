@@ -1055,4 +1055,19 @@ main > .vtg-hero {
   }
 }
 
+/* ============================================
+   PROJECTS SECTION — Homepage cards
+   ============================================ */
+#projects-section a[href*="/projects/"]:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  border-color: var(--vtg-green) !important;
+}
+
+@media (max-width: 768px) {
+  #projects-section > .vtg-container > div:first-of-type {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 
