@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84.24 64.85">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #29361b;
+      }
+
+      .cls-2 {
+        letter-spacing: 0em;
+      }
+
+      .cls-3 {
+        fill: #2a371e;
+        font-family: Montserrat-Bold, Montserrat;
+        font-size: 10px;
+        font-weight: 700;
+      }
+
+      .cls-4 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-5 {
+        letter-spacing: -.05em;
+      }
+
+      .cls-6 {
+        letter-spacing: 0em;
+      }
+
+      .cls-7 {
+        letter-spacing: -.01em;
+      }
+    </style>
+  </defs>
+  <text class="cls-3" transform="translate(.09 62.19)"><tspan class="cls-5" x="0" y="0">V</tspan><tspan class="cls-2" x="6.91" y="0">ena</tspan><tspan class="cls-7" x="26.3" y="0">k</tspan><tspan x="32.8" y="0">a TRe</tspan><tspan class="cls-6" x="61.64" y="0">L</tspan><tspan class="cls-4" x="67.64" y="0">e</tspan><tspan x="73.8" y="0">af</tspan></text>
+  <polygon class="cls-1" points="81.32 .02 81.27 53.44 41.72 53.41 81.32 .02"/>
+  <polygon class="cls-1" points="41.74 0 41.74 53.43 2.42 53.43 41.74 0"/>
+</svg>

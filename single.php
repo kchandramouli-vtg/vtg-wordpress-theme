@@ -1,0 +1,1 @@
+<?php get_header(); vtg_page_hero(array("breadcrumbs"=>array(array("label"=>"Insights","url"=>"/insights/"),array("label"=>get_the_title())))); ?><div class="vtg-container"><div class="vtg-inner-layout vtg-inner-layout--full"><div class="vtg-inner-content"><?php while(have_posts()):the_post();the_content();endwhile; ?></div></div></div><?php get_footer(); ?>

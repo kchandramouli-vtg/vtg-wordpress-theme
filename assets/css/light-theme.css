@@ -1,0 +1,1058 @@
+/*
+ * VTG Light Theme Override
+ * 
+ * Drop this file into: wp-content/themes/vtg-theme/assets/css/light-theme.css
+ * Then add to functions.php enqueue:
+ *   wp_enqueue_style('vtg-light', VTG_URI.'/assets/css/light-theme.css', array('vtg-style','vtg-inner'), VTG_VERSION);
+ *
+ * Transforms the dark-navy design into a clean white editorial theme
+ * with strong VTG green colour layers and improved readability.
+ */
+
+/* ============================================
+   DESIGN TOKEN OVERRIDES
+   ============================================ */
+:root {
+  --vtg-dark: #0C2E1E;
+  --vtg-navy: #F7FAF8;
+  --vtg-charcoal: #1A3C2A;
+  --vtg-slate: #4B6358;
+  --vtg-green: #1A7F52;
+  --vtg-green-deep: #146542;
+  --vtg-green-pale: #2D9E6B;
+  --vtg-green-faint: #E8F5EE;
+  --vtg-green-light: #F0FAF5;
+  --vtg-cyan: #0E8A7D;
+  --vtg-blue: #1D6FB5;
+  --vtg-violet: #6B4DC7;
+  --vtg-warm: #FAFCFB;
+  --vtg-white: #FFFFFF;
+  --vtg-border: rgba(26,127,82,0.08);
+  --vtg-border-light: rgba(0,0,0,0.06);
+  --vtg-text: #1A2E23;
+  --vtg-text-secondary: #4B6358;
+  --vtg-surface: #F4F8F6;
+}
+
+body {
+  background: #FFFFFF;
+  color: var(--vtg-text-secondary);
+}
+
+/* ============================================
+   HEADER — White glassmorphism
+   ============================================ */
+.vtg-header {
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.vtg-header--scrolled {
+  background: rgba(255,255,255,0.97);
+  box-shadow: 0 1px 20px rgba(0,0,0,0.04);
+}
+
+/* Nav links */
+.vtg-nav > a,
+.vtg-nav > .vtg-nav__item > a {
+  color: var(--vtg-slate) !important;
+}
+
+.vtg-nav > a:hover,
+.vtg-nav > .vtg-nav__item > a:hover {
+  color: var(--vtg-green) !important;
+  background: var(--vtg-green-faint) !important;
+}
+
+.vtg-nav .vtg-cta-btn {
+  background: var(--vtg-green) !important;
+  color: #fff !important;
+}
+
+.vtg-nav .vtg-cta-btn:hover {
+  background: var(--vtg-green-deep) !important;
+}
+
+/* Dropdown */
+.vtg-nav__dropdown {
+  background: #fff !important;
+  border: 1px solid rgba(0,0,0,0.08) !important;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.03) !important;
+}
+
+.vtg-nav__dropdown a {
+  color: var(--vtg-slate) !important;
+}
+
+.vtg-nav__dropdown a:hover {
+  background: var(--vtg-green-faint) !important;
+  color: var(--vtg-green) !important;
+}
+
+/* Dropdown caret */
+.vtg-nav__item--has-children > a::after {
+  border-top-color: var(--vtg-slate) !important;
+}
+
+/* Mobile toggle */
+.vtg-mobile-toggle span {
+  background: var(--vtg-charcoal) !important;
+}
+
+/* Mobile nav overlay */
+.vtg-mobile-nav-open .vtg-nav {
+  background: #fff !important;
+}
+
+.vtg-mobile-nav-open .vtg-nav a {
+  color: var(--vtg-charcoal) !important;
+  border-bottom-color: rgba(0,0,0,0.05) !important;
+}
+
+.vtg-mobile-nav-open .vtg-nav .vtg-nav__dropdown a {
+  color: var(--vtg-slate) !important;
+}
+
+/* ============================================
+   HERO — Rich green gradient instead of dark
+   ============================================ */
+.vtg-hero {
+  background: linear-gradient(160deg, #0C2E1E 0%, #14654F 40%, #1A7F52 100%) !important;
+}
+
+.vtg-hero__grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px) !important;
+}
+
+.vtg-hero__glow {
+  background: radial-gradient(circle, rgba(255,255,255,0.06), transparent 60%) !important;
+}
+
+.vtg-hero__glow--2 {
+  background: radial-gradient(circle, rgba(45,158,107,0.12), transparent 60%) !important;
+}
+
+.vtg-hero h1 { color: #fff; }
+.vtg-hero h1 em { color: #A8E6C3; }
+.vtg-hero p { color: rgba(255,255,255,0.65); }
+
+.vtg-hero__badge {
+  color: #A8E6C3 !important;
+  background: rgba(255,255,255,0.08) !important;
+  border-color: rgba(255,255,255,0.12) !important;
+}
+
+.vtg-hero__badge::before { background: #A8E6C3 !important; }
+
+.vtg-hero__stats {
+  border-top-color: rgba(255,255,255,0.1) !important;
+}
+
+.vtg-hero__stat-value { color: #fff; }
+.vtg-hero__stat-label { color: rgba(255,255,255,0.5); }
+
+/* ============================================
+   SECTION BACKGROUNDS — Light layers
+   ============================================ */
+.vtg-section--dark {
+  background: var(--vtg-surface) !important;
+}
+
+.vtg-section--navy {
+  background: var(--vtg-green-faint) !important;
+}
+
+.vtg-section--warm {
+  background: #fff !important;
+}
+
+/* Section text for light backgrounds */
+.vtg-section--dark .vtg-section__title,
+.vtg-section--navy .vtg-section__title {
+  color: var(--vtg-dark) !important;
+}
+
+.vtg-section--dark .vtg-section__intro,
+.vtg-section--navy .vtg-section__intro {
+  color: var(--vtg-slate) !important;
+}
+
+.vtg-section__label {
+  color: var(--vtg-green) !important;
+}
+
+.vtg-section__title {
+  color: var(--vtg-dark) !important;
+}
+
+.vtg-section__title em {
+  color: var(--vtg-green) !important;
+}
+
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
+.vtg-about-grid h2 { color: var(--vtg-dark); }
+.vtg-about-grid h2 em { color: var(--vtg-green); }
+.vtg-about-grid p { color: var(--vtg-slate); }
+
+.vtg-about-visual {
+  background: linear-gradient(145deg, #0C2E1E, #1A7F52) !important;
+}
+
+/* ============================================
+   R&D APPROACH CARDS — White cards on surface
+   ============================================ */
+.vtg-approach-card {
+  background: #fff !important;
+  border: 1px solid var(--vtg-border-light) !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+}
+
+.vtg-approach-card:hover {
+  background: #fff !important;
+  border-color: var(--vtg-green) !important;
+  box-shadow: 0 8px 30px rgba(26,127,82,0.08);
+}
+
+.vtg-approach-card__num {
+  color: var(--vtg-green) !important;
+}
+
+.vtg-approach-card h3 {
+  color: var(--vtg-dark) !important;
+}
+
+.vtg-approach-card p {
+  color: var(--vtg-slate) !important;
+}
+
+/* ============================================
+   PRODUCT CARDS — White on green-faint
+   ============================================ */
+.vtg-product-card {
+  background: #fff !important;
+  border: 1px solid var(--vtg-border-light) !important;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.03);
+}
+
+.vtg-product-card:hover {
+  border-color: var(--vtg-green) !important;
+  box-shadow: 0 12px 40px rgba(26,127,82,0.1) !important;
+}
+
+.vtg-product-card__img {
+  background: linear-gradient(135deg, var(--vtg-green-faint), #E0F2E9) !important;
+}
+
+.vtg-product-card__img img {
+  opacity: 0.9 !important;
+}
+
+.vtg-product-card:hover .vtg-product-card__img img {
+  opacity: 1 !important;
+}
+
+.vtg-product-card__cluster {
+  background: var(--vtg-green-faint) !important;
+  color: var(--vtg-green) !important;
+}
+
+.vtg-product-card h3 {
+  color: var(--vtg-dark) !important;
+}
+
+.vtg-product-card p {
+  color: var(--vtg-slate) !important;
+}
+
+.vtg-product-card__link {
+  color: var(--vtg-green) !important;
+}
+
+/* ============================================
+   CAPABILITY CARDS
+   ============================================ */
+.vtg-cap-card {
+  background: var(--vtg-surface) !important;
+  border: 1px solid var(--vtg-border-light) !important;
+}
+
+.vtg-cap-card:hover {
+  background: #fff !important;
+  border-color: var(--vtg-green) !important;
+  box-shadow: 0 8px 30px rgba(26,127,82,0.08);
+}
+
+.vtg-cap-card h3 { color: var(--vtg-dark) !important; }
+.vtg-cap-card p { color: var(--vtg-slate) !important; }
+
+/* ============================================
+   INDUSTRY PILLS — White on surface
+   ============================================ */
+.vtg-industry-pill {
+  background: #fff !important;
+  border: 1px solid var(--vtg-border-light) !important;
+}
+
+.vtg-industry-pill:hover {
+  background: var(--vtg-green-faint) !important;
+  border-color: var(--vtg-green) !important;
+}
+
+.vtg-industry-pill span {
+  color: var(--vtg-text) !important;
+}
+
+.vtg-industry-pill:hover span {
+  color: var(--vtg-green) !important;
+}
+
+/* ============================================
+   R&D CARDS
+   ============================================ */
+.vtg-rd-card {
+  background: var(--vtg-surface) !important;
+  border: 1px solid var(--vtg-border-light) !important;
+}
+
+.vtg-rd-card:hover {
+  background: #fff !important;
+  border-color: var(--vtg-green) !important;
+  box-shadow: 0 8px 30px rgba(26,127,82,0.08);
+}
+
+.vtg-rd-card h3 { color: var(--vtg-dark) !important; }
+.vtg-rd-card p { color: var(--vtg-slate) !important; }
+
+/* ============================================
+   CTA SECTION — Keep green gradient (strong layer)
+   ============================================ */
+.vtg-cta-section {
+  background: linear-gradient(145deg, #0C2E1E 0%, #14654F 100%) !important;
+}
+
+/* ============================================
+   FOOTER — Deep green instead of dark navy
+   ============================================ */
+.vtg-footer {
+  background: #0C2E1E !important;
+  border-top: 1px solid rgba(26,127,82,0.15) !important;
+}
+
+.vtg-footer__brand p { color: rgba(255,255,255,0.45); }
+
+.vtg-footer__col h5 {
+  color: rgba(255,255,255,0.3) !important;
+}
+
+.vtg-footer__col a {
+  color: rgba(255,255,255,0.5) !important;
+}
+
+.vtg-footer__col a:hover {
+  color: #A8E6C3 !important;
+}
+
+.vtg-footer__bottom {
+  border-top-color: rgba(255,255,255,0.06) !important;
+}
+
+.vtg-footer__bottom p,
+.vtg-footer__bottom a {
+  color: rgba(255,255,255,0.35) !important;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.vtg-btn--primary {
+  background: var(--vtg-green) !important;
+  color: #fff !important;
+}
+
+.vtg-btn--primary:hover {
+  background: var(--vtg-green-deep) !important;
+  box-shadow: 0 8px 30px rgba(26,127,82,0.2) !important;
+}
+
+.vtg-btn--outline {
+  background: transparent !important;
+  color: var(--vtg-dark) !important;
+  border: 1px solid var(--vtg-border-light) !important;
+}
+
+.vtg-btn--outline:hover {
+  background: var(--vtg-green-faint) !important;
+  border-color: var(--vtg-green) !important;
+  color: var(--vtg-green) !important;
+}
+
+/* Outline buttons inside hero/CTA keep white styling */
+.vtg-hero .vtg-btn--outline,
+.vtg-cta-section .vtg-btn--outline {
+  color: #fff !important;
+  border-color: rgba(255,255,255,0.2) !important;
+}
+
+.vtg-hero .vtg-btn--outline:hover,
+.vtg-cta-section .vtg-btn--outline:hover {
+  background: rgba(255,255,255,0.08) !important;
+  border-color: rgba(255,255,255,0.3) !important;
+  color: #fff !important;
+}
+
+/* ============================================
+   INNER PAGES — Page hero (green banner)
+   ============================================ */
+/* Keep the inner page hero as a green gradient banner */
+main > .vtg-hero {
+  background: linear-gradient(160deg, #0C2E1E 0%, #1A7F52 100%) !important;
+}
+
+/* ============================================
+   INNER PAGES — Sidebar
+   ============================================ */
+.vtg-sidebar__label {
+  color: var(--vtg-slate) !important;
+}
+
+.vtg-sidebar__nav a {
+  color: var(--vtg-slate) !important;
+}
+
+.vtg-sidebar__nav a:hover {
+  background: var(--vtg-green-faint) !important;
+  color: var(--vtg-green) !important;
+}
+
+.vtg-sidebar__nav a.vtg-sidebar__active {
+  background: var(--vtg-green-faint) !important;
+  color: var(--vtg-green) !important;
+  border-left-color: var(--vtg-green) !important;
+}
+
+/* ============================================
+   INNER PAGES — Content
+   ============================================ */
+.vtg-inner-content h2 { color: var(--vtg-dark) !important; }
+.vtg-inner-content h3 { color: var(--vtg-dark) !important; }
+.vtg-inner-content p { color: var(--vtg-slate) !important; }
+.vtg-inner-content strong { color: var(--vtg-dark) !important; }
+.vtg-inner-content li { color: var(--vtg-slate) !important; }
+.vtg-inner-content li::before { background: var(--vtg-green) !important; }
+.vtg-inner-content a { color: var(--vtg-green); }
+.vtg-inner-content a:hover { color: var(--vtg-green-deep); text-decoration: underline; }
+
+/* Content card */
+.vtg-content-card {
+  background: var(--vtg-surface) !important;
+  border: 1px solid var(--vtg-border-light) !important;
+}
+
+.vtg-content-card h4 { color: var(--vtg-dark) !important; }
+
+/* Callout */
+.vtg-callout {
+  background: var(--vtg-green-faint) !important;
+  border-left-color: var(--vtg-green) !important;
+}
+
+.vtg-callout p { color: var(--vtg-dark) !important; }
+
+/* Feature grid */
+.vtg-feature-item {
+  background: var(--vtg-surface) !important;
+  border: 1px solid var(--vtg-border-light) !important;
+}
+
+.vtg-feature-item h4 { color: var(--vtg-dark) !important; }
+.vtg-feature-item p { color: var(--vtg-slate) !important; }
+
+/* Deliverables (keep dark for contrast) */
+.vtg-deliverables {
+  background: #0C2E1E !important;
+}
+
+.vtg-deliverables h3 { color: #fff !important; }
+.vtg-deliverables li { color: rgba(255,255,255,0.6) !important; }
+.vtg-deliverables li::before { background: #A8E6C3 !important; }
+
+/* Page CTA */
+.vtg-page-cta {
+  border-top-color: var(--vtg-border-light) !important;
+}
+
+.vtg-page-cta h3 { color: var(--vtg-dark) !important; }
+.vtg-page-cta p { color: var(--vtg-slate) !important; }
+
+/* Section cards (landing pages) */
+.vtg-section-card {
+  background: var(--vtg-surface) !important;
+  border: 1px solid var(--vtg-border-light) !important;
+}
+
+.vtg-section-card:hover {
+  background: #fff !important;
+  border-color: var(--vtg-green) !important;
+  box-shadow: 0 8px 30px rgba(26,127,82,0.08);
+}
+
+.vtg-section-card h3 { color: var(--vtg-dark) !important; }
+.vtg-section-card p { color: var(--vtg-slate) !important; }
+
+/* Product page specifics */
+.vtg-product-hero-img {
+  border: 1px solid var(--vtg-border-light) !important;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.vtg-product-spec {
+  background: var(--vtg-surface) !important;
+}
+
+.vtg-product-spec dt { color: var(--vtg-green) !important; }
+.vtg-product-spec dd { color: var(--vtg-dark) !important; }
+
+/* ============================================
+   WORDPRESS EDITOR CONTENT STYLING
+   ============================================ */
+
+/* Tables inside editor content */
+.vtg-inner-content table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.vtg-inner-content table td {
+  padding: 14px 18px;
+  font-size: 14px;
+  color: var(--vtg-slate);
+  border-bottom: 1px solid var(--vtg-border-light);
+  vertical-align: top;
+}
+
+.vtg-inner-content table td:first-child {
+  width: 140px;
+  color: var(--vtg-dark);
+  font-weight: 500;
+}
+
+.vtg-inner-content table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Block quotes */
+.vtg-inner-content blockquote {
+  background: var(--vtg-green-faint);
+  border-left: 4px solid var(--vtg-green);
+  border-radius: 0 12px 12px 0;
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+
+.vtg-inner-content blockquote p {
+  color: var(--vtg-dark) !important;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Separators */
+.vtg-inner-content hr,
+.wp-block-separator {
+  border: none !important;
+  height: 1px !important;
+  background: var(--vtg-border-light) !important;
+  opacity: 1 !important;
+}
+
+/* WordPress buttons */
+.wp-block-button__link {
+  border-radius: 10px !important;
+  font-weight: 600 !important;
+  padding: 14px 28px !important;
+  transition: all 0.25s ease !important;
+}
+
+.wp-block-button__link.has-vivid-green-cyan-background-color {
+  background: var(--vtg-green) !important;
+}
+
+.wp-block-button__link.has-vivid-green-cyan-background-color:hover {
+  background: var(--vtg-green-deep) !important;
+  box-shadow: 0 8px 30px rgba(26,127,82,0.2);
+}
+
+.is-style-outline .wp-block-button__link {
+  border: 1.5px solid var(--vtg-border-light) !important;
+  color: var(--vtg-dark) !important;
+  background: transparent !important;
+}
+
+.is-style-outline .wp-block-button__link:hover {
+  border-color: var(--vtg-green) !important;
+  color: var(--vtg-green) !important;
+  background: var(--vtg-green-faint) !important;
+}
+
+/* Columns */
+.wp-block-columns {
+  gap: 32px;
+}
+
+/* ============================================
+   ABOUT VISUAL — Capability cards inside
+   ============================================ */
+.vtg-about-visual div[style*="rgba(16,185,129"] {
+  background: rgba(26,127,82,0.08) !important;
+  border-color: rgba(26,127,82,0.15) !important;
+}
+
+.vtg-about-visual div[style*="rgba(6,182,212"] {
+  background: rgba(14,138,125,0.08) !important;
+  border-color: rgba(14,138,125,0.15) !important;
+}
+
+.vtg-about-visual div[style*="rgba(139,92,246"] {
+  background: rgba(107,77,199,0.08) !important;
+  border-color: rgba(107,77,199,0.15) !important;
+}
+
+.vtg-about-visual div[style*="rgba(59,130,246"] {
+  background: rgba(29,111,181,0.08) !important;
+  border-color: rgba(29,111,181,0.15) !important;
+}
+
+/* ============================================
+   ANIMATIONS — Softer for light theme
+   ============================================ */
+.vtg-fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.vtg-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   404 PAGE
+   ============================================ */
+body.error404 .vtg-hero {
+  background: linear-gradient(160deg, #0C2E1E, #1A7F52) !important;
+}
+
+/* ============================================
+   SCROLL SELECTION
+   ============================================ */
+::selection {
+  background: var(--vtg-green-faint);
+  color: var(--vtg-dark);
+}
+
+/* ============================================
+   RESPONSIVE REFINEMENTS
+   ============================================ */
+@media (max-width: 768px) {
+  .vtg-sidebar {
+    border-bottom-color: var(--vtg-border-light) !important;
+  }
+}
+
+.wp-block-button__link.has-vivid-green-cyan-background-color,
+.wp-block-button .wp-block-button__link.has-vivid-green-cyan-background-color,
+.has-vivid-green-cyan-background-color {
+  background-color: #0C2E1E !important;
+  color: #fff !important;
+  border: none !important;
+  padding: 16px 32px !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 16px rgba(12,46,30,0.2) !important;
+}
+
+.wp-block-button__link.has-vivid-green-cyan-background-color:hover,
+.wp-block-button .wp-block-button__link.has-vivid-green-cyan-background-color:hover {
+  background-color: #1A7F52 !important;
+  box-shadow: 0 8px 30px rgba(26,127,82,0.3) !important;
+  transform: translateY(-2px);
+}
+
+
+/* ============================================
+   HEADER & LOGO — Larger logo with taller bar
+   ============================================ */
+:root {
+  --header-h: 120px;
+}
+
+.vtg-header {
+  height: var(--header-h);
+}
+
+.vtg-header__inner {
+  height: var(--header-h);
+}
+
+.vtg-logo img {
+  height: 120px !important;
+  width: auto !important;
+}
+
+/* Push hero content down to clear taller header */
+.vtg-hero {
+  padding-top: calc(var(--header-h) + 40px) !important;
+}
+
+/* Adjust inner page hero too */
+main > .vtg-hero {
+  padding-top: 180px !important;
+}
+
+/* Adjust sidebar sticky position */
+.vtg-sidebar {
+  top: 110px !important;
+}
+
+
+
+/* ============================================
+   NAV — Larger link text
+   ============================================ */
+.vtg-nav > a,
+.vtg-nav > .vtg-nav__item > a {
+  font-size: 14px !important;
+  padding: 8px 10px !important;
+}
+.vtg-nav {
+  gap: 2px !important;
+}
+@media (max-width: 1200px) {
+  .vtg-nav > a,
+  .vtg-nav > .vtg-nav__item > a {
+    font-size: 13px !important;
+    padding: 8px 8px !important;
+  }
+}
+
+
+/* ============================================
+   FOOTER — White background
+   ============================================ */
+.vtg-footer {
+  background: #fff !important;
+  border-top: 1px solid rgba(0,0,0,0.08) !important;
+}
+
+.vtg-footer__brand p {
+  color: var(--vtg-slate) !important;
+}
+
+.vtg-footer__col h5 {
+  color: var(--vtg-green) !important;
+}
+
+.vtg-footer__col a {
+  color: var(--vtg-slate) !important;
+}
+
+.vtg-footer__col a:hover {
+  color: var(--vtg-green) !important;
+}
+
+.vtg-footer__bottom {
+  border-top-color: rgba(0,0,0,0.06) !important;
+}
+
+.vtg-footer__bottom p,
+.vtg-footer__bottom a {
+  color: var(--vtg-slate) !important;
+}
+
+/* ============================================
+   FOOTER — Larger logo
+   ============================================ */
+.vtg-footer__brand img {
+  height: 120px !important;
+  width: auto !important;
+}
+
+/* ============================================
+   NEWS PAGE STYLES
+   Add to the end of light-theme.css
+   ============================================ */
+
+/* Featured (latest) post */
+.vtg-news-featured {
+  background: var(--vtg-surface);
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  border: 1px solid var(--vtg-border-light);
+  transition: all 0.3s ease;
+}
+
+.vtg-news-featured:hover {
+  box-shadow: 0 8px 30px rgba(26,127,82,0.08);
+}
+
+.vtg-news-featured__img {
+  display: block;
+  height: 280px;
+  overflow: hidden;
+}
+
+.vtg-news-featured__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.vtg-news-featured:hover .vtg-news-featured__img img {
+  transform: scale(1.03);
+}
+
+.vtg-news-featured__body {
+  padding: 32px;
+}
+
+.vtg-news-featured__body h2 {
+  font-family: var(--font-display) !important;
+  font-size: 26px !important;
+  color: var(--vtg-dark) !important;
+  margin: 10px 0 14px !important;
+  font-weight: 400 !important;
+  line-height: 1.3 !important;
+}
+
+.vtg-news-featured__body h2 a {
+  color: inherit;
+  transition: color 0.2s;
+}
+
+.vtg-news-featured__body h2 a:hover {
+  color: var(--vtg-green);
+}
+
+.vtg-news-featured__body p {
+  font-size: 15px !important;
+  color: var(--vtg-slate) !important;
+  line-height: 1.75 !important;
+  margin-bottom: 16px !important;
+}
+
+/* Meta line (date + tags) */
+.vtg-news-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.vtg-news-meta time {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--vtg-slate);
+  letter-spacing: 0.02em;
+}
+
+.vtg-news-tag {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: var(--vtg-green-faint);
+  color: var(--vtg-green);
+}
+
+/* Read more link */
+.vtg-news-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--vtg-green) !important;
+  text-decoration: none !important;
+  transition: color 0.2s;
+}
+
+.vtg-news-link:hover {
+  color: var(--vtg-green-deep) !important;
+}
+
+/* Post grid */
+.vtg-news-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+/* Individual card */
+.vtg-news-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--vtg-border-light);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.vtg-news-card:hover {
+  border-color: var(--vtg-green);
+  box-shadow: 0 8px 30px rgba(26,127,82,0.08);
+  transform: translateY(-3px);
+}
+
+.vtg-news-card__img {
+  display: block;
+  height: 180px;
+  overflow: hidden;
+  background: var(--vtg-green-faint);
+}
+
+.vtg-news-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.vtg-news-card:hover .vtg-news-card__img img {
+  transform: scale(1.03);
+}
+
+.vtg-news-card__img--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  opacity: 0.3;
+}
+
+.vtg-news-card__body {
+  padding: 22px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.vtg-news-card__body h3 {
+  font-family: var(--font-display) !important;
+  font-size: 18px !important;
+  color: var(--vtg-dark) !important;
+  margin: 8px 0 10px !important;
+  font-weight: 400 !important;
+  line-height: 1.35 !important;
+}
+
+.vtg-news-card__body h3 a {
+  color: inherit;
+  transition: color 0.2s;
+}
+
+.vtg-news-card__body h3 a:hover {
+  color: var(--vtg-green);
+}
+
+.vtg-news-card__body p {
+  font-size: 13px !important;
+  color: var(--vtg-slate) !important;
+  line-height: 1.65 !important;
+  flex: 1;
+  margin-bottom: 14px !important;
+}
+
+/* Pagination */
+.vtg-news-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 32px 0;
+  border-top: 1px solid var(--vtg-border-light);
+}
+
+.vtg-news-pagination a,
+.vtg-news-pagination span {
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.vtg-news-pagination a {
+  color: var(--vtg-slate);
+  background: var(--vtg-surface);
+}
+
+.vtg-news-pagination a:hover {
+  color: var(--vtg-green);
+  background: var(--vtg-green-faint);
+}
+
+.vtg-news-pagination span.current {
+  color: #fff;
+  background: var(--vtg-green);
+}
+
+/* Empty state */
+.vtg-news-empty {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.vtg-news-empty__icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.3;
+}
+
+.vtg-news-empty h2 {
+  font-family: var(--font-display) !important;
+  font-size: 24px !important;
+  color: var(--vtg-dark) !important;
+  margin-bottom: 8px !important;
+}
+
+.vtg-news-empty p {
+  color: var(--vtg-slate) !important;
+}
+
+/* Page content below news */
+.vtg-news-page-content {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--vtg-border-light);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .vtg-news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vtg-news-featured__img {
+    height: 200px;
+  }
+
+  .vtg-news-featured__body {
+    padding: 24px;
+  }
+
+  .vtg-news-featured__body h2 {
+    font-size: 22px !important;
+  }
+}
+
+
